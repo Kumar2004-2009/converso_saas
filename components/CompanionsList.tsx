@@ -33,8 +33,8 @@ const CompanionsList = ({title,companions,classNames}:CompanionListProps) => {
         </TableHeader>
         <TableBody>
 
-          {companions?.map(({id,subject,name,topic,duration}) => (
-            <TableRow key={id}>
+          {companions?.map(({id,subject,name,topic,duration},index) => (
+            <TableRow key={`${id}-${index}`}>
                 <TableCell>
                   <Link href={`/companions/${id}`}>
                     <div className="flex items-center gap-2">
@@ -74,7 +74,7 @@ const CompanionsList = ({title,companions,classNames}:CompanionListProps) => {
                       <span className="max-md:hidden">mins</span>
                     </p>
 
-                    <Image src="/icons.clock.svg" alt="minutes" width={14} height={14} className="md:hidden" />
+                    <Image src="/icons/clock.svg" alt="minutes" width={14} height={14} className="md:hidden" />
                   </div>
                 </TableCell>
             </TableRow>

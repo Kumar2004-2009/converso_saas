@@ -27,7 +27,7 @@ const SubjectFilter = () => {
             });
         }
         router.push(newUrl, { scroll: false });
-    },[subject])
+    },[subject,router,searchParams])
   return (
     <Select onValueChange={setSubject} value={subject}>
         <SelectTrigger className='input capitalize'>
